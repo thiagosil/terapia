@@ -1,0 +1,107 @@
+<p id="notice"><% flash[:notice] %></p>
+
+
+<p>
+  <strong><%= t("name") %></strong>
+  <%= @person.name %>
+</p>
+<p>
+  <strong><%= t("birthday") %></strong>
+  <%= @person.birthday %>
+</p>
+<p>
+  <strong><%= t("telephone") %></strong>
+  <%= @person.telephone %>
+</p>
+<p>
+  <strong><%= t("neighborhood") %></strong>
+  <%= @person.neighborhood %>
+</p>
+<p>
+  <strong><%= t("city") %></strong>
+  <%= @person.city %>
+</p>
+<p>
+  <strong><%= t("religion") %></strong>
+  <%= @person.religion %>
+</p>
+<p>
+  <strong><%= t("literacy") %></strong>
+  <%= @person.literacy %>
+</p>
+<p>
+  <strong><%= t("father") %></strong>
+  <%= @person.father %>
+</p>
+<p>
+  <strong><%= t("mother") %></strong>
+  <%= @person.mother %>
+</p>
+<p>
+  <strong><%= t("email") %></strong>
+  <%= @person.email %>
+</p>
+<p>
+  <strong><%= t("cellphone") %></strong>
+  <%= @person.cellphone %>
+</p>
+<p>
+  <strong><%= t("email") %></strong>
+  <%= @person.email %>
+</p>
+<p>
+  <strong><%= t("company") %></strong>
+  <%= @person.company %>
+</p>
+<p>
+  <strong><%= t("position") %></strong>
+  <%= @person.position %>
+</p>
+<p>
+  <strong><%= t("marital_status") %></strong>
+  <%= @person.marital_status %>
+</p>
+<p>
+  <strong><%= t("drugs") %></strong>
+  <%= @person.drugs %>
+</p>
+<p>
+  <strong><%= t("allergies") %></strong>
+  <%= @person.allergies %>
+</p>
+<p>
+  <strong><%= t("postal_code") %></strong>
+  <%= @person.allergies %>
+</p>
+<p>
+  <strong><%= t("identity") %></strong>
+  <%= @person.allergies %>
+</p>
+<p>
+  <strong><%= t("identity_issuer") %></strong>
+  <%= @person.allergies %>
+</p>
+<p>
+  <strong><%= t("identity_expedition_date") %></strong>
+  <%= @person.allergies %>
+</p>
+<p>
+  <strong><%= t("type") %></strong>
+  <%= @person.type %>
+</p>
+<p>
+  <strong><%= t("beginning_date") %></strong>
+  <%= @person.beginning_date %>
+</p>
+<p>
+  <strong><%= t("end_date") %></strong>
+  <%= @person.end_date %>
+</p>
+<p>
+  <strong><%= t("address") %></strong>
+  <%= @person.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', person_path %>

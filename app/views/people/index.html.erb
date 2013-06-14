@@ -1,0 +1,26 @@
+<h1>Pessoas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td class="actions"><%= link_to 'Mostrar', person %>
+        <%= link_to 'Editar', edit_person_path(person) %>
+        <%= link_to 'Remover', person, method: :delete, data: { confirm: 'Tem certeza?' } %><td/>
+      </tr>
+    <% end %>
+  </tbody>
+</table
+
+<br>
+
+<%= button_to 'Cadastrar Pessoa', new_person_path, :method => 'get', :class => "btn btn-info" %>

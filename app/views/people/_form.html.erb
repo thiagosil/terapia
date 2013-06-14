@@ -1,0 +1,180 @@
+<%= simple_form_for @person, :html => {:class => 'form-horizontal'} do |f| %>
+  <% if @person.errors.any? %>
+    <div class="alert alert-error">
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="span6">
+        <fieldset>
+
+        <div class="control-group">
+          <%= f.label :name , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        <div class="control-group">
+            <%= f.label :birthday , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :birthday %>
+            </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :religion , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :religion %>
+          </div>
+        </div>
+         <legend>Dados Pessoais</legend>
+        </fieldset>
+        <div class="control-group">
+          <%= f.label :literacy , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :literacy %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :father , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :father %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :mother , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :mother %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :email , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :email %>
+          </div>
+
+        </div>
+        <div class="control-group">
+          <%= f.label :telephone , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :telephone %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :cellphone , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :cellphone %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :company , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :company %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :position , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :position %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :marital_status , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :marital_status %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :drugs , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :drugs %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :allergies , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :allergies %>
+          </div>
+
+        </div>
+        <div class="control-group">
+          <%= f.label :identity , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :identity %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :identity_issuer , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :identity_issuer %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :identity_expedition_date , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :identity_expedition_date %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :type , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :type, [['Servo', 1], ['Amigo da terapia', 2], ['Participante', 3]] %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :beginning_date , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :beginning_date %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :end_date , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :end_date %>
+          </div>
+        </div>
+      </div>
+      <fieldset>
+        <legend> Endereço</legend>
+        <div class="span6">
+          <div class="control-group">
+            <%= f.label :address , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :address %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :neighborhood , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :neighborhood %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :city , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :city %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :postal_code , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :postal_code %>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+
+<div class="control-group">
+  <div class="controls">
+      <%= f.submit "Cadastrar Pessoa" , :class => 'btn btn-success' %>
+  </div>
+</div>
+<% end %>

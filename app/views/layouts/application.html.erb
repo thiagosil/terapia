@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terapia</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "bootstrap", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
+
+
+  <%= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js", "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+
+      </button>
+      <%= link_to 'Terapia de Oração', people_path, :class => 'brand'%>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>
