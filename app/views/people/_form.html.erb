@@ -21,9 +21,27 @@
           </div>
         </div>
         <div class="control-group">
+          <%= f.label :gender , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :gender, [['Masculino', 'Masculino'], ['Feminino', 'Feminino']] %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :type , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :type, [['Servo', 'Servo'], ['Amigo da terapia', 'Amigo da terapia'], ['Participante', 'Participante']] %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :email , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :email %>
+          </div>
+        </div>
+        <div class="control-group">
             <%= f.label :birthday , :html => { :class => 'control-label'}%>
             <div class="controls">
-              <%= f.text_field :birthday %>
+              <%= f.date_select :birthday, :start_year => 1940, :include_blank => true %>
             </div>
         </div>
         <div class="control-group">
@@ -121,12 +139,6 @@
           </div>
         </div>
         <div class="control-group">
-          <%= f.label :type , :html => { :class => 'control-label'}%>
-          <div class="controls">
-            <%= f.select :type, [['Servo', 1], ['Amigo da terapia', 2], ['Participante', 3]] %>
-          </div>
-        </div>
-        <div class="control-group">
           <%= f.label :beginning_date , :html => { :class => 'control-label'}%>
           <div class="controls">
             <%= f.text_field :beginning_date %>
@@ -136,6 +148,12 @@
           <%= f.label :end_date , :html => { :class => 'control-label'}%>
           <div class="controls">
             <%= f.text_field :end_date %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :accompanist , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :accompanist %>
           </div>
         </div>
       </div>

@@ -206,13 +206,13 @@ pt-BR:
     errors:
       <<: *errors
     models:
-      label:
-        person:
-          name: 'Nome'
+      user: 'Usuário'
+      person: 'Pessoa'
   simple_form:
     labels:
       person:
         name: 'Nome'
+        gender: 'Sexo'
         birthday: 'Data de nascimento'
         telephone: 'Telefone'
         neighborhood: 'Bairro'
@@ -236,8 +236,13 @@ pt-BR:
         beginning_date: ' Data de início'
         end_date:  'Data final'
         address: 'Endereço'
+        accompanist: 'Nome do Acompanhador'
+      user:
+        password: 'Senha'
+        password_confirmation: 'Confirmação da senha'
 
   name: 'Nome'
+  gender: 'Sexo'
   birthday: 'Data de nascimento'
   telephone: 'Telefone'
   neighborhood: 'Bairro'
@@ -261,3 +266,4 @@ pt-BR:
   beginning_date: ' Data de início'
   end_date:  'Data final'
   address: 'Endereço'
+  accompanist: 'Nome do Acompanhador'

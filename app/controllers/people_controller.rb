@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  before_filter :check_authentication
+
   def index
     @people = Person.all
   end
@@ -10,7 +12,7 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(params[:person])
 
-    if  @person.save
+    if @person.save
       redirect_to @person, notice: 'Pessoa criada com sucesso.'
     else
       render action: 'new'
@@ -24,7 +26,12 @@ class PeopleController < ApplicationController
   def update
     @person = Person.find(params[:id])
 
+    params[:person]['birthday(1i)'] = round_birthday(params[:person]['birthday(1i)'])
+    params[:person]['birthday(2i)'] = round_birthday(params[:person]['birthday(2i)'])
+    params[:person]['birthday(3i)'] = round_birthday(params[:person]['birthday(3i)'])
+
     respond_to do |format|
+      allowed_attributtes =
       if @person.update_attributes(params[:person])
         format.html  { redirect_to(@person,
                       :notice => 'Pessoa alterada com sucesso.') }
@@ -50,4 +57,13 @@ class PeopleController < ApplicationController
   def show
     @person = Person.find(params[:id])
   end
+
+  private
+    def round_birthday(param)
+      date = param.to_i
+      if date == 0
+        date = 1
+      end
+      date.to_s
+    end
 end

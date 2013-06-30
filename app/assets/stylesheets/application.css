@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+p.logged_user {
+  color: #FFFFFF;
+  float: right;
+}
+
+#person_attributes td:first-child {
+  width: 30%;
+}

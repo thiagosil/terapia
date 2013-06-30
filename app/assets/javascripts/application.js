@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(function() {
-  $("#person_birthday").datepicker();
+  //$("#person_birthday").datepicker();
   $("#person_beginning_date").datepicker();
   $("#person_end_date").datepicker();
 });

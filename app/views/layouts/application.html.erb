@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
 
-
   <%= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js", "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -20,7 +19,15 @@
       <%= link_to 'Terapia de Oração', people_path, :class => 'brand'%>
       <div class="nav-collapse collapse">
         <ul class="nav">
-
+          <% if current_user %>
+          <p>
+            Conectado como <%= current_user.email %>
+            <%= link_to "Desconectar", log_out_path %>
+          </p>
+          <% else %>
+            <%= link_to "Cadastrar", sign_up_path %> ou
+            <%= link_to "Acessar", log_in_path %>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -28,6 +35,9 @@
 </div>
 
 <div class="container">
+  <% if flash[:notice] %>
+  <div id="notice" class="alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
   <%= yield %>
 </div>
 
