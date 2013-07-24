@@ -25,8 +25,10 @@
             <%= link_to "Desconectar", log_out_path %>
           </p>
           <% else %>
-            <%= link_to "Cadastrar", sign_up_path %> ou
-            <%= link_to "Acessar", log_in_path %>
+            <div>
+              <%= link_to "Cadastrar", sign_up_path %> ou
+              <%= link_to "Acessar", log_in_path %>
+            </div>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->

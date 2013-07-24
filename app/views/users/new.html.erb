@@ -23,5 +23,9 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <p>
+    <%= f.label :role %><br />
+    <%= f.select :role, [['Administrador', 'Administrador'], ['Secretária', 'Secretária'], ['Escritório', 'Escritório']] %>
+  </p>
   <p class="button"><%= f.submit %></p>
 <% end %>

@@ -10,8 +10,6 @@ class CreatePeople < ActiveRecord::Migration
       t.string :city
       t.string :religion
       t.string :literacy
-      t.string :father
-      t.string :mother
       t.string :email
       t.string :cellphone
       t.string :company

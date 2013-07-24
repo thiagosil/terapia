@@ -16,6 +16,10 @@ p.logged_user {
   float: right;
 }
 
-#person_attributes td:first-child {
+#person_attributes td:first-child, #family_attributes td:first-child{
   width: 30%;
+}
+
+ul.nav p, ul.nav div {
+	padding: 10px 0 0 0;
 }

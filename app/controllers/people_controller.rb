@@ -7,6 +7,8 @@ class PeopleController < ApplicationController
 
   def new
     @person = Person.new
+    family = @person.build_family
+    6.times { family.children.build }
   end
 
   def create
@@ -31,7 +33,6 @@ class PeopleController < ApplicationController
     params[:person]['birthday(3i)'] = round_birthday(params[:person]['birthday(3i)'])
 
     respond_to do |format|
-      allowed_attributtes =
       if @person.update_attributes(params[:person])
         format.html  { redirect_to(@person,
                       :notice => 'Pessoa alterada com sucesso.') }

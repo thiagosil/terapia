@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621211933) do
+ActiveRecord::Schema.define(:version => 20130724133640) do
+
+  create_table "children", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.integer  "family_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "families", :force => true do |t|
+    t.string   "mother"
+    t.string   "father"
+    t.integer  "number_of_children"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "people", :force => true do |t|
     t.string   "name"
@@ -22,8 +38,6 @@ ActiveRecord::Schema.define(:version => 20130621211933) do
     t.string   "city"
     t.string   "religion"
     t.string   "literacy"
-    t.string   "father"
-    t.string   "mother"
     t.string   "email"
     t.string   "cellphone"
     t.string   "company"
@@ -41,7 +55,16 @@ ActiveRecord::Schema.define(:version => 20130621211933) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "gender"
-    t.string   "accompanist"
+    t.boolean  "active"
+    t.string   "cpf"
+    t.string   "blood_type"
+    t.string   "first_role"
+    t.string   "second_role"
+    t.integer  "children"
+    t.string   "parish"
+    t.string   "community"
+    t.string   "pastoral"
+    t.integer  "family_id"
   end
 
   create_table "users", :force => true do |t|
@@ -50,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130621211933) do
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "role"
   end
 
 end

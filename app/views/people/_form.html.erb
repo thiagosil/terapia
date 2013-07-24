@@ -21,15 +21,27 @@
           </div>
         </div>
         <div class="control-group">
+          <%= f.label :active , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.check_box :active %>
+          </div>
+        </div>
+        <div class="control-group">
           <%= f.label :gender , :html => { :class => 'control-label'}%>
           <div class="controls">
-            <%= f.select :gender, [['Masculino', 'Masculino'], ['Feminino', 'Feminino']] %>
+            <%= f.select :gender, Person.translated_genders%>
           </div>
         </div>
         <div class="control-group">
           <%= f.label :type , :html => { :class => 'control-label'}%>
           <div class="controls">
-            <%= f.select :type, [['Servo', 'Servo'], ['Amigo da terapia', 'Amigo da terapia'], ['Participante', 'Participante']] %>
+            <%= f.select :type, Person.translated_types %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :cpf , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :cpf %>
           </div>
         </div>
         <div class="control-group">
@@ -55,19 +67,7 @@
         <div class="control-group">
           <%= f.label :literacy , :html => { :class => 'control-label'}%>
           <div class="controls">
-            <%= f.text_field :literacy %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :father , :html => { :class => 'control-label'}%>
-          <div class="controls">
-            <%= f.text_field :father %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :mother , :html => { :class => 'control-label'}%>
-          <div class="controls">
-            <%= f.text_field :mother %>
+            <%= f.select :literacy, Person.translated_literacy_types %>
           </div>
         </div>
         <div class="control-group">
@@ -75,7 +75,6 @@
           <div class="controls">
             <%= f.text_field :email %>
           </div>
-
         </div>
         <div class="control-group">
           <%= f.label :telephone , :html => { :class => 'control-label'}%>
@@ -104,7 +103,7 @@
         <div class="control-group">
           <%= f.label :marital_status , :html => { :class => 'control-label'}%>
           <div class="controls">
-            <%= f.text_field :marital_status %>
+            <%= f.select :marital_status, Person.translated_marital_statuses %>
           </div>
         </div>
         <div class="control-group">
@@ -151,9 +150,40 @@
           </div>
         </div>
         <div class="control-group">
-          <%= f.label :accompanist , :html => { :class => 'control-label'}%>
+          <%= f.label :parish , :html => { :class => 'control-label'}%>
           <div class="controls">
-            <%= f.text_field :accompanist %>
+            <%= f.text_field :parish %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :community , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :community %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :pastoral , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :pastoral %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= f.label :blood_type , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :blood_type, Person::BLOOD_TYPES %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :first_role , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :first_role, Person.translated_functions %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :second_role , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :second_role, Person.translated_functions %>
           </div>
         </div>
       </div>
@@ -185,6 +215,13 @@
             </div>
           </div>
         </div>
+      </fieldset>
+      <fieldset>
+        <legend>Família</legend>
+        <%= f.fields_for :family do |family_fields| %>
+          <%= render 'family_fields', :f => family_fields %>
+        <% end %>
+        
       </fieldset>
     </div>
   </div>

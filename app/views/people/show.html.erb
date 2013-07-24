@@ -5,11 +5,11 @@
   </tr>
   <tr>
     <td><strong><%= t("gender") %></td></strong>
-    <td><%= @person.gender %></td>
+    <td><%= t(@person.gender) %></td>
   </tr>
   <tr>
     <td><strong><%= t("type") %></td></strong>
-    <td><%= @person.type %></td>
+    <td><%= t(@person.type) %></td>
   </tr>
   <tr>
     <td><strong><%= t("birthday") %></td></strong>
@@ -33,15 +33,7 @@
   </tr>
   <tr>
     <td><strong><%= t("literacy") %></td></strong>
-    <td><%= @person.literacy %></td>
-  </tr>
-  <tr>
-    <td><strong><%= t("father") %></td></strong>
-    <td><%= @person.father %></td>
-  </tr>
-  <tr>
-    <td><strong><%= t("mother") %></td></strong>
-    <td><%= @person.mother %></td>
+    <td><%= t(@person.literacy) %></td>
   </tr>
   <tr>
     <td><strong><%= t("email") %></td></strong>
@@ -50,10 +42,6 @@
   <tr>
     <td><strong><%= t("cellphone") %></td></strong>
     <td><%= @person.cellphone %></td>
-  </tr>
-  <tr>
-    <td><strong><%= t("email") %></td></strong>
-    <td><%= @person.email %></td>
   </tr>
   <tr>
     <td><strong><%= t("company") %></td></strong>
@@ -65,7 +53,7 @@
   </tr>
   <tr>
     <td><strong><%= t("marital_status") %></td></strong>
-    <td><%= @person.marital_status %></td>
+    <td><%=  t(@person.marital_status) %></td>
   </tr>
   <tr>
     <td><strong><%= t("drugs") %></td></strong>
@@ -77,19 +65,19 @@
   </tr>
   <tr>
     <td><strong><%= t("postal_code") %></td></strong>
-    <td><%= @person.allergies %></td>
+    <td><%= @person.postal_code %></td>
   </tr>
   <tr>
     <td><strong><%= t("identity") %></td></strong>
-    <td><%= @person.allergies %></td>
+    <td><%= @person.identity %></td>
   </tr>
   <tr>
     <td><strong><%= t("identity_issuer") %></td></strong>
-    <td><%= @person.allergies %></td>
+    <td><%= @person.identity_issuer %></td>
   </tr>
   <tr>
     <td><strong><%= t("identity_expedition_date") %></td></strong>
-    <td><%= @person.allergies %></td>
+    <td><%= @person.identity_expedition_date %></td>
   </tr>
 
   <tr>
@@ -98,19 +86,30 @@
   </tr>
   <tr>
     <td><strong><%= t("end_date") %></td></strong>
-    <td><%= @person.end_date.strftime("%d/%m/%Y") %></td>
+    <td><%= @person.end_date.strftime("%d/%m/%Y") if @person.end_date%></td>
   </tr>
   <tr>
     <td><strong><%= t("address") %></td></strong>
     <td><%= @person.address %></td>
   </tr>
-  <tr>
-    <td><strong><%= t("accompanist") %></td></strong>
-    <td><%= @person.accompanist %></td>
-  </tr>
 </table>
 
+<h2>Endereço</h2>
+<table id="family_attributes" class="table table-bordered">
+  <tr>
+    <td><%= t("father") %></td>
+    <td><%= @person.family.father %></td>
+  </tr>
+  <tr>
+    <td><%= t("mother") %></td>
+    <td><%= @person.family.mother %></td>
+  </tr>
+  <tr>
+    <td><%= t("number_of_children") %></td>
+    <td><%= @person.family.number_of_children %></td>
+  </tr>
 
+</table>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', person_path %>

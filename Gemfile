@@ -30,7 +30,19 @@ gem 'simple_form'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+group :test do
+  gem "shoulda-matchers"
+  gem 'factory_girl'
+  gem "database_cleaner"
+end
+
+# `rspec-rails` needs to be in the development group so that Rails generators work.
+group :development, :test do
+  gem "rspec-rails", "~> 2.12"
+  gem 'factory_girl_rails'
+end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
