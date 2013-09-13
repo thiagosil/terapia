@@ -55,3 +55,4 @@ end
 
 # To use debugger
 # gem 'debugger'
+gem 'acts_as_relation', '~> 0.1'

@@ -1,0 +1,26 @@
+<h1>Amigos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= friend.name %></td>
+        <td class="actions"><%= link_to 'Mostrar', friend %>
+        <%= link_to 'Editar', edit_friend_path(friend) %>
+        <%= link_to 'Remover', friend, method: :delete, data: { confirm: 'Tem certeza?' } %><td/>
+      </tr>
+    <% end %>
+  </tbody>
+</table
+
+<br>
+
+<%= button_to 'Cadastrar Amigo', new_friend_path, :method => 'get', :class => "btn btn-info" %>

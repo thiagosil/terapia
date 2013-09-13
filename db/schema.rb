@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724133640) do
+ActiveRecord::Schema.define(:version => 20130801180352) do
 
   create_table "children", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,42 @@ ActiveRecord::Schema.define(:version => 20130724133640) do
     t.integer  "number_of_children"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "spouse"
+  end
+
+  create_table "friends", :force => true do |t|
+    t.string   "cpf"
+    t.string   "first_role"
+    t.string   "second_role"
+    t.string   "company"
+    t.integer  "family_id"
+    t.string   "parish"
+    t.string   "community"
+    t.string   "pastoral"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "participants", :force => true do |t|
+    t.string   "parish"
+    t.string   "community"
+    t.string   "pastoral"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "patients", :force => true do |t|
+    t.string   "psychologist"
+    t.string   "frequency"
+    t.string   "payment_form"
+    t.string   "payment_terms"
+    t.string   "pray_followed"
+    t.string   "duo_in_charge"
+    t.string   "day_care"
+    t.string   "religion"
+    t.string   "observation"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "people", :force => true do |t|
@@ -36,11 +72,9 @@ ActiveRecord::Schema.define(:version => 20130724133640) do
     t.string   "address"
     t.string   "neighborhood"
     t.string   "city"
-    t.string   "religion"
     t.string   "literacy"
     t.string   "email"
     t.string   "cellphone"
-    t.string   "company"
     t.string   "position"
     t.string   "marital_status"
     t.string   "drugs"
@@ -56,15 +90,10 @@ ActiveRecord::Schema.define(:version => 20130724133640) do
     t.datetime "updated_at",               :null => false
     t.string   "gender"
     t.boolean  "active"
-    t.string   "cpf"
     t.string   "blood_type"
-    t.string   "first_role"
-    t.string   "second_role"
     t.integer  "children"
-    t.string   "parish"
-    t.string   "community"
-    t.string   "pastoral"
-    t.integer  "family_id"
+    t.integer  "personifiable_id"
+    t.string   "personifiable_type"
   end
 
   create_table "users", :force => true do |t|

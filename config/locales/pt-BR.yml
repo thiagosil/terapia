@@ -210,7 +210,7 @@ pt-BR:
       person: 'Pessoa'
   simple_form:
     labels:
-      person:
+      friend:
         name: 'Nome'
         gender: 'Sexo'
         birthday: 'Data de nascimento'
@@ -246,6 +246,9 @@ pt-BR:
         first_role: 'Função principal (1) na terapia de Oração'
         second_role: 'Função principal (2) na terapia de Oração'
         children: 'Filhos'
+      children:
+        name: 'Nome'
+        age: 'Idade'
       user:
         password: 'Senha'
         password_confirmation: 'Confirmação da senha'
@@ -278,7 +281,7 @@ pt-BR:
   active: 'Ativo'
   gender: 'Sexo'
   parish: 'Paróquia'
-  community: 'Community'
+  community: 'Comunidade'
   pastoral: 'Pastoral'
   blood_type: 'Tipo sanguíneo'
   filhos: 'children'
@@ -315,3 +318,7 @@ pt-BR:
   single: 'Solteiro'
   divorced: 'Divorciado'
   children: 'Filhos'
+  spouse: 'Cônjuge'
+  age: 'Idade'
+  friends: 'Amigos'
+  created_at: 'Data de Criação'

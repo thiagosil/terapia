@@ -1,0 +1,26 @@
+<div class="control-group">
+  <%= f.label :father , :html => { :class => 'control-label'}%>
+  <div class="controls">
+    <%= f.text_field :father %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :mother , :html => { :class => 'control-label'}%>
+  <div class="controls">
+    <%= f.text_field :mother %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :number_of_children , :html => { :class => 'control-label'}%>
+  <div class="controls">
+    <%= f.number_field :number_of_children, in: 1..15 %>
+  </div>
+</div>
+
+<p>
+  <% @friend.family.children.each.with_index do |child,index| %>
+    <%= f.fields_for :children, child do |builder| %>  
+      <%= render "children_fields", f: builder, index: index %>
+    <% end %>
+<% end %>
+</p>

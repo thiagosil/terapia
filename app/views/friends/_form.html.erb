@@ -1,0 +1,223 @@
+<%= simple_form_for @friend, :html => {:class => 'form-horizontal'} do |f| %>
+  <% if @friend.errors.any? %>
+    <div class="alert alert-error">
+      <ul>
+      <% @friend.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="span6">
+        <fieldset>
+
+        <div class="control-group">
+          <%= f.label :name , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :active , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.check_box :active %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :gender , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :gender, Person.translated_genders%>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :type , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :type, Person.translated_types %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :cpf , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :cpf %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :email , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :email %>
+          </div>
+        </div>
+        <div class="control-group">
+            <%= f.label :birthday , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.date_select :birthday, :start_year => 1940, :include_blank => true %>
+            </div>
+        </div>
+         <legend>Dados Pessoais</legend>
+        </fieldset>
+        <div class="control-group">
+          <%= f.label :literacy , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :literacy, Person.translated_literacy_types %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :telephone , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :telephone %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :cellphone , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :cellphone %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :company , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :company %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :position , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :position %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :marital_status , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :marital_status, Person.translated_marital_statuses %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :drugs , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :drugs %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :allergies , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :allergies %>
+          </div>
+
+        </div>
+        <div class="control-group">
+          <%= f.label :identity , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :identity %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :identity_issuer , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :identity_issuer %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :identity_expedition_date , :html => { :class => 'control-label'}%>
+          <div class="controls">
+           <%= f.date_select :identity_expedition_date %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :beginning_date , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.date_select :beginning_date %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :end_date , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.date_select :end_date %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :parish , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :parish %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :community , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :community %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :pastoral , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.text_field :pastoral %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= f.label :blood_type , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :blood_type, Person::BLOOD_TYPES %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :first_role , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :first_role, Friend.translated_functions %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :second_role , :html => { :class => 'control-label'}%>
+          <div class="controls">
+            <%= f.select :second_role, Friend.translated_functions %>
+          </div>
+        </div>
+      </div>
+      <fieldset>
+        <legend> Endereço</legend>
+        <div class="span6">
+          <div class="control-group">
+            <%= f.label :address , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :address %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :neighborhood , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :neighborhood %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :city , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :city %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= f.label :postal_code , :html => { :class => 'control-label'}%>
+            <div class="controls">
+              <%= f.text_field :postal_code %>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Família</legend>
+        <%= f.fields_for :family do |family_fields| %>
+          <%= render 'family_fields', :f => family_fields %>
+        <% end %>
+        
+      </fieldset>
+    </div>
+  </div>
+
+
+<div class="control-group">
+  <div class="controls">
+      <%= f.submit "Cadastrar Pessoa" , :class => 'btn btn-success' %>
+  </div>
+</div>
+<% end %>
