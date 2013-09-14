@@ -123,8 +123,9 @@
     <td><%= t("number_of_children") %></td>
     <td><%= @friend.family.number_of_children %></td>
   </tr>
-
-  <h2> Filhos </h2>
+</table>
+<table id="family_attributes" class="table table-bordered">
+  <h2>Filhos</h2>
   <% @friend.family.children.each do |child| %>
     <tr>
       <td><%= t("name") %></td>
@@ -139,5 +140,5 @@
 
 </table>
 
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friend_path %>
+<%= link_to 'Editar', edit_friend_path(@friend) %> |
+<%= link_to 'Voltar', friend_path %>
