@@ -1,4 +1,6 @@
 pt-BR:
+  'false': 'Falso'
+  'true': 'Verdadeiro'
   date:
     abbr_day_names:
     - Dom
@@ -253,6 +255,7 @@ pt-BR:
         password: 'Senha'
         password_confirmation: 'Confirmação da senha'
 
+  number_of_children: 'Quantidade de filhos'
   name: 'Nome'
   gender: 'Sexo'
   birthday: 'Data de nascimento'
