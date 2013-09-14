@@ -13,28 +13,21 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-
-      </button>
-      <span>
-        <%= link_to 'Terapia de Oração', people_path, :class => 'brand'%>
-      <span>
+      <%= link_to 'Terapia de Oração', people_path, :class => 'brand'%>
       <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="active"> <%= link_to 'Amigos', friends_path %></li>
-          <li>
           <% if current_user %>
-            <p>
+            <p class="navbar-text pull-right">
               Conectado como <%= current_user.email %>
               <%= link_to "Desconectar", log_out_path %>
             </p>
             <% else %>
-              <div>
+              <p class="navbar-text pull-right">
                 <%= link_to "Cadastrar", sign_up_path %> ou
                 <%= link_to "Acessar", log_in_path %>
-              </div>
+              </p>
             <% end %>
-          </li>
+        <ul class="nav">
+          <li class="active"> <%= link_to 'Amigos', friends_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
