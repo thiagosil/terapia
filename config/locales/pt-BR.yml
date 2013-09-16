@@ -253,6 +253,7 @@ pt-BR:
         age: 'Idade'
       user:
         password: 'Senha'
+        remember_me: 'Lembrar-me'
         password_confirmation: 'Confirmação da senha'
 
   number_of_children: 'Quantidade de filhos'
