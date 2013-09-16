@@ -1,6 +1,4 @@
 class PeopleController < ApplicationController
-  before_filter :check_authentication
-
   def index
     @people = Person.all
   end

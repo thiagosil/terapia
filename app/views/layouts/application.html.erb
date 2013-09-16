@@ -13,21 +13,22 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to 'Terapia de Oração', people_path, :class => 'brand'%>
+      <%= link_to 'Terapia de Oração', friends_path, :class => 'brand'%>
       <div class="nav-collapse collapse">
           <% if current_user %>
             <p class="navbar-text pull-right">
               Conectado como <%= current_user.email %>
-              <%= link_to "Desconectar", log_out_path %>
+              <%= link_to "Desconectar", destroy_user_session_path, method: :delete %>
             </p>
             <% else %>
               <p class="navbar-text pull-right">
-                <%= link_to "Cadastrar", sign_up_path %> ou
-                <%= link_to "Acessar", log_in_path %>
+                <%= link_to "Cadastrar", new_user_registration_path %> ou
+                <%= link_to "Acessar", new_user_session_path %>
               </p>
             <% end %>
         <ul class="nav">
           <li class="active"> <%= link_to 'Amigos', friends_path %></li>
+          <li > <%= link_to 'Servos', friends_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -36,7 +37,10 @@
 
 <div class="container">
   <% if flash[:notice] %>
-  <div id="notice" class="alert alert-success"><%= flash[:notice] %></div>
+    <div id="notice" class="alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
+  <% if flash[:alert] %>
+    <p class="alert"><%= flash[:alert] %></p>
   <% end %>
   <%= yield %>
 </div>

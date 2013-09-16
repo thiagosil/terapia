@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
-  # before_filter :check_authentication
-
+  before_filter :authenticate_user!
+  
   def index
     @friends = Friend.all
   end
