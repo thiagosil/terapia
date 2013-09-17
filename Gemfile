@@ -30,6 +30,7 @@ end
 
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise'
 
 # To use ActiveModel has_secure_password
