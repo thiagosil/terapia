@@ -1,10 +1,9 @@
 Terapia::Application.routes.draw do
   devise_for :users
 
-  resources :sessions
-  resources :people
   resources :friends
-
+  resources :participants
+  resources :patients
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
