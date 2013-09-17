@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def index
     @friends = Friend.all
   end
@@ -12,7 +12,6 @@ class FriendsController < ApplicationController
   end
 
   def create
-    set_date_fields(params)
     @friend = Friend.new(params[:friend])
 
 
@@ -30,7 +29,6 @@ class FriendsController < ApplicationController
   end
 
   def update
-    set_date_fields(params)
     @friend = Friend.find(params[:id])
 
     respond_to do |format|
@@ -59,31 +57,4 @@ class FriendsController < ApplicationController
   def show
     @friend = Friend.find(params[:id])
   end
-
-  private
-    def set_date_fields(params)
-      date_fields = %w{ birthday identity_expedition_date beginning_date end_date}
-      date_fields.each do |date_field|
-        set_date(date_field, params)
-      end
-    end
-
-    def set_date(field_name, params)
-      year =  round_birthday(params[:friend]["#{field_name}(1i)"])
-      month = round_birthday(params[:friend]["#{field_name}(2i)"])
-      day = round_birthday(params[:friend]["#{field_name}(3i)"])
-
-      params[:friend][field_name] = Date.new(year, month, day)
-      params[:friend].delete("#{field_name}(1i)")
-      params[:friend].delete("#{field_name}(2i)")
-      params[:friend].delete("#{field_name}(3i)")
-    end
-
-    def round_birthday(param)
-      date = param.to_i
-      if date == 0
-        date = 1
-      end
-      date
-    end
 end

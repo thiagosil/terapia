@@ -51,10 +51,7 @@
           </div>
         </div>
         <div class="control-group">
-            <%= f.label :birthday , :html => { :class => 'control-label'}%>
-            <div class="controls">
-              <%= f.date_select :birthday, :start_year => 1940, :include_blank => true %>
-            </div>
+          <%= f.input :birthday %>
         </div>
          <legend>Dados Pessoais</legend>
         </fieldset>
@@ -120,22 +117,13 @@
           </div>
         </div>
         <div class="control-group">
-          <%= f.label :identity_expedition_date , :html => { :class => 'control-label'}%>
-          <div class="controls">
-           <%= f.date_select :identity_expedition_date %>
-          </div>
+          <%= f.input :identity_expedition_date %>
         </div>
         <div class="control-group">
-          <%= f.label :beginning_date , :html => { :class => 'control-label'}%>
-          <div class="controls">
-            <%= f.date_select :beginning_date %>
-          </div>
+          <%= f.input :beginning_date %>
         </div>
         <div class="control-group">
-          <%= f.label :end_date , :html => { :class => 'control-label'}%>
-          <div class="controls">
-            <%= f.date_select :end_date %>
-          </div>
+          <%= f.input :end_date %>
         </div>
         <div class="control-group">
           <%= f.label :parish , :html => { :class => 'control-label'}%>
@@ -209,7 +197,7 @@
         <%= f.fields_for :family do |family_fields| %>
           <%= render 'family_fields', :f => family_fields %>
         <% end %>
-        
+
       </fieldset>
     </div>
   </div>
