@@ -1,0 +1,89 @@
+<table id="friend_attributes" class="table table-bordered">
+  <tr>
+    <td><strong><%= t("name") %></td></strong>
+    <td><%= @participant.name %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("created_at") %></td></strong>
+    <td><%= @participant.created_at.strftime("%d/%m/%Y") %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("active") %></td></strong>
+    <td><%= t(@participant.active) %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("gender") %></td></strong>
+    <td><%= t(@participant.gender) %></td>
+  </tr>
+  <tr>
+  <td><strong><%= t("marital_status") %></td></strong>
+    <td><%=  t(@participant.marital_status) %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("address") %></td></strong>
+    <td><%= @participant.address %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("neighborhood") %></td></strong>
+    <td><%= @participant.neighborhood %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("city") %></td></strong>
+    <td><%= @participant.city %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("email") %></td></strong>
+    <td><%= @participanlt.email %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("telephone") %></td></strong>
+    <td><%= @participant.telephone %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("cellphone") %></td></strong>
+    <td><%= @participant.cellphone %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("blood_type") %></td></strong>
+    <td><%= @participant.blood_type %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("age") %></td></strong>
+    <td><%= @participant.age %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("literacy") %></td></strong>
+    <td><%= t(@participant.literacy) %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("identity") %></td></strong>
+    <td><%= @participant.identity %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("identity_issuer") %></td></strong>
+    <td><%= @participant.identity_issuer %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("identity_expedition_date") %></td></strong>
+    <td><%= @participant.identity_expedition_date %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("birthday") %></td></strong>
+    <td><%= @participant.birthday %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("parish") %></td></strong>
+    <td><%= @participant.parish %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("community") %></td></strong>
+    <td><%= @participant.community %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("pastoral") %></td></strong>
+    <td><%= @participant.pastoral %></td>
+  </tr>
+</table>
+
+<%= link_to 'Editar', edit_participant_path(@participant) %> |
+<%= link_to 'Voltar', participant_path %>
