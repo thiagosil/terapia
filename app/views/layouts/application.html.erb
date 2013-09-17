@@ -3,9 +3,9 @@
 <head>
   <title>Terapia</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "bootstrap", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
+  <%= stylesheet_link_tag    "bootstrap" %>
 
-  <%= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js", "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -27,8 +27,9 @@
               </p>
             <% end %>
         <ul class="nav">
-          <li class="active"> <%= link_to 'Amigos', friends_path %></li>
-          <li > <%= link_to 'Servos', friends_path %></li>
+          <li class="<%=cp(friends_path)%>"> <%= link_to 'Amigos', friends_path  %></li>
+          <li class="<%=cp(participants_path)%>"> <%= link_to 'Participantes', participants_path %></li>
+          <li class="<%=cp(patients_path)%>"> <%= link_to 'Pacientes', patients_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
