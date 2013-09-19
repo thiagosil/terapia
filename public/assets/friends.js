@@ -1,0 +1,1 @@
+(function(){$(document).ready(function(){return $("#friend_birthday").datepicker(),$("#friend_identity_expedition_date").datepicker(),$("#friend_beginning_date").datepicker(),$("#friend_end_date").datepicker()})}).call(this);
