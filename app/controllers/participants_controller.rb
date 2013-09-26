@@ -10,9 +10,7 @@ class ParticipantsController < ApplicationController
   end
 
   def create
-    set_date_fields(params)
     @participant = Participant.new(params[:participant])
-
 
     if @participant.save
       redirect_to @participant, notice: 'Participante criado com sucesso.'

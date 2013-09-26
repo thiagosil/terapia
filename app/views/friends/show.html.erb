@@ -47,10 +47,12 @@
     <td><strong><%= t("blood_type") %></td></strong>
     <td><%= @friend.blood_type %></td>
   </tr>
-  <tr>
-    <td><strong><%= t("age") %></td></strong>
-    <td><%= @friend.age %></td>
-  </tr>
+  <% if @friend.birthday %>
+    <tr>
+      <td><strong><%= t("age") %></td></strong>
+      <td><%= @friend.age %></td>
+    </tr>
+  <% end %>
   <tr>
     <td><strong><%= t("literacy") %></td></strong>
     <td><%= t(@friend.literacy) %></td>
