@@ -9,6 +9,7 @@ group :development do
   gem 'sqlite3'
   gem "better_errors"
   gem 'debugger'
+  gem 'foreman'
 end
 
 
@@ -32,6 +33,7 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'devise'
+gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -52,7 +54,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
